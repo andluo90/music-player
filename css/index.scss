@@ -1,0 +1,66 @@
+$default-font-size : 16px;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+}
+
+
+.music-box { 
+    // 整个音乐盒子
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+
+    .before-next-btn , .before-next-song , .control , .bottom{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .current-song {
+        // 当前曲目
+        font-size: ($default-font-size * 2);
+        color : pink;
+    }
+
+    .singer {
+        // 歌手
+        font-size : ($default-font-size * 1.3);
+        color: lightslategrey;
+    }
+
+    .icon {
+        border: 5px solid pink;
+        height: 100px;
+        width: 100px;
+        margin: 0 auto;
+        border-radius: 50%;
+        box-shadow: 0 0 18px 5px red;
+    }
+
+    .progress {
+        // 进度条
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+
+        .total {
+            width: 80%;
+            height: 3px;
+            background: grey;
+
+            .now {
+                height: 3px;
+                background-color: red;
+                width: 10%;
+            }
+        }
+    }
+}

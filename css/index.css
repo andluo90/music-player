@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-size: 16px; }
+
+.music-box {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center; }
+  .music-box .before-next-btn, .music-box .before-next-song, .music-box .control, .music-box .bottom {
+    display: flex;
+    justify-content: space-around; }
+  .music-box .current-song {
+    font-size: 32px;
+    color: pink; }
+  .music-box .singer {
+    font-size: 20.8px;
+    color: lightslategrey; }
+  .music-box .icon {
+    border: 5px solid pink;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+    box-shadow: 0 0 18px 5px red; }
+  .music-box .progress {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto; }
+    .music-box .progress .total {
+      width: 80%;
+      height: 3px;
+      background: grey; }
+      .music-box .progress .total .now {
+        height: 3px;
+        background-color: red;
+        width: 10%; }
+
+/*# sourceMappingURL=index.css.map */
