@@ -1,4 +1,5 @@
 $default-font-size : 16px;
+$max-width : 500px;
 
 * {
     margin: 0;
@@ -17,7 +18,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     text-align: center;
-    max-width: 500px;
+    max-width: $max-width;
     margin: 0 auto;
 
     .before-next-btn , .before-next-song , .control , .bottom{
@@ -42,6 +43,8 @@ body {
         border: 5px solid pink;
         height: (1rem/2);
         width: (1rem/2);
+        max-width: ($max-width/2);
+        max-height: ($max-width/2);
         margin: 0 auto;
         border-radius: 50%;
         box-shadow: 0 0 18px 5px red;
@@ -66,4 +69,33 @@ body {
             }
         }
     }
+
+    .list {
+        position: absolute;
+        border: 2px solid rgba(158, 158, 158,1);;
+        padding: 10px;
+        background: rgba(158, 158, 158, 0.9);
+        width: 80%;
+        max-width: ($max-width * 0.8);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 8px 2px grey;
+        display: none;
+
+        .item {
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        
+    }
+
+    .list.show { 
+        //显示歌曲列表
+        display: block;
+    }
+
+    
 }

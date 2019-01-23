@@ -26,6 +26,8 @@ body {
     border: 5px solid pink;
     height: 0.5rem;
     width: 0.5rem;
+    max-width: 250px;
+    max-height: 250px;
     margin: 0 auto;
     border-radius: 50%;
     box-shadow: 0 0 18px 5px red; }
@@ -42,5 +44,23 @@ body {
         height: 3px;
         background-color: red;
         width: 10%; }
+  .music-box .list {
+    position: absolute;
+    border: 2px solid #9e9e9e;
+    padding: 10px;
+    background: rgba(158, 158, 158, 0.9);
+    width: 80%;
+    max-width: 400px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 8px 2px grey;
+    display: none; }
+    .music-box .list .item {
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between; }
+  .music-box .list.show {
+    display: block; }
 
 /*# sourceMappingURL=index.css.map */
