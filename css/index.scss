@@ -17,6 +17,8 @@ body {
     flex-direction: column;
     justify-content: space-around;
     text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
 
     .before-next-btn , .before-next-song , .control , .bottom{
         display: flex;
@@ -35,10 +37,11 @@ body {
         color: lightslategrey;
     }
 
-    .icon {
+    .icon { 
+        // 歌手圆形头像，宽高1:1，并且占页面宽度的一半
         border: 5px solid pink;
-        height: 100px;
-        width: 100px;
+        height: (1rem/2);
+        width: (1rem/2);
         margin: 0 auto;
         border-radius: 50%;
         box-shadow: 0 0 18px 5px red;
