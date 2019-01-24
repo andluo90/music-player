@@ -12,7 +12,8 @@ body {
 
 // 字体图标
 .icon { 
-    width: 2em; height: 2em;
+    width: 2.5em; 
+    height: 2.5em;
     vertical-align: -0.15em;
     fill: grey;
     overflow: hidden;
@@ -55,7 +56,11 @@ body {
         margin: 0 auto;
         border-radius: 50%;
         box-shadow: 0 0 18px 5px red;
+        background-image: url(../img/swan.jpg);
+        background-size: contain;
     }
+
+    
 
     .progress {
         // 进度条
