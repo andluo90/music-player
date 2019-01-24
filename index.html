@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/index.css">
+    <script src="//at.alicdn.com/t/font_1030081_0lcpdxlo2ele.js"></script>
     <script>
         // 动态REM
         let pageWidth = window.innerWidth;
@@ -16,8 +17,12 @@
 <body>
     <div class="music-box">
         <div class="before-next-btn">
-            <span>上一首</span>
-            <span>下一首</span>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-xiayishou"></use>
+            </svg>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-shangyishou"></use>
+            </svg>            
         </div>
         <div class="before-next-song">
             <span>你知道我在等你吗</span>
@@ -30,7 +35,7 @@
             <span>歌手: 蔡依林</span>
         </div>
         <div>
-            <div class="icon">圆图</div>
+            <div class="circle"></div>
         </div>
         <div class="progress">
             <div>0:00</div>
@@ -41,14 +46,29 @@
 
         </div>
         <div class="control">
-            <span>上一首</span>
-            <span>播放</span>
-            <span>下一首</span>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-shangyishou"></use>
+            </svg>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-zanting"></use>
+            </svg>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-xiayishou"></use>
+            </svg>
         </div>
         <div class="bottom">
-            <span id="like">喜欢</span>
-            <span id="list_btn">列表</span>
-            <span id="mode">随机</span>
+            <svg class="icon" aria-hidden="true">
+                <use id = 'like' xlink:href="#icon-xihuan"></use>
+            </svg>
+            <svg class="icon" aria-hidden="true">
+                <use id = 'list_btn' xlink:href="#icon-liebiao"></use>
+            </svg>
+            <svg class="icon" aria-hidden="true">
+                <use id = 'mode' xlink:href="#icon-suiji"></use>
+            </svg>                    
+            <!-- <span id="like">喜欢</span> -->
+            <!-- <span id="list_btn">列表</span> -->
+            <!-- <span id="mode">随机</span> -->
         </div>
         <div class="list" id="song_list">
             <div class="item">
@@ -80,7 +100,18 @@
                     <span>今天你要嫁给我</span>
                     <span>凤皇传奇</span>
                     <span>播放</span>
-            </div>         
+            </div>   
+            <div class="item">
+                    <span>今天你要嫁给我</span>
+                    <span>凤皇传奇</span>
+                    <span>播放</span>
+            </div> 
+            <div class="item">
+                    <span>今天你要嫁给我</span>
+                    <span>凤皇传奇</span>
+                    <span>播放</span>
+            </div> 
+                                                       
         </div>
         
     </div>

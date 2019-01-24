@@ -10,6 +10,13 @@ body {
     font-size: 16px;
 }
 
+// 字体图标
+.icon { 
+    width: 2em; height: 2em;
+    vertical-align: -0.15em;
+    fill: grey;
+    overflow: hidden;
+ }
 
 .music-box { 
     // 整个音乐盒子
@@ -38,7 +45,7 @@ body {
         color: lightslategrey;
     }
 
-    .icon { 
+    .circle { 
         // 歌手圆形头像，宽高1:1，并且占页面宽度的一半
         border: 5px solid pink;
         height: (1rem/2);
@@ -70,7 +77,8 @@ body {
         }
     }
 
-    .list {
+    .list { 
+        // 歌曲列表
         position: absolute;
         border: 2px solid rgba(158, 158, 158,1);;
         padding: 10px;
@@ -80,8 +88,9 @@ body {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        box-shadow: 0 0 8px 2px grey;
-        display: none;
+        box-shadow: 0 2 2px 1px grey;
+        opacity: 0;
+        
 
         .item {
             padding: 10px 0;
@@ -89,12 +98,13 @@ body {
             justify-content: space-between;
         }
 
+        transition: 1s;
         
     }
 
     .list.show { 
         //显示歌曲列表
-        display: block;
+        opacity: 1;
     }
 
     

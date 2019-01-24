@@ -5,6 +5,13 @@
 body {
   font-size: 16px; }
 
+.icon {
+  width: 2em;
+  height: 2em;
+  vertical-align: -0.15em;
+  fill: grey;
+  overflow: hidden; }
+
 .music-box {
   height: 100vh;
   display: flex;
@@ -22,7 +29,7 @@ body {
   .music-box .singer {
     font-size: 20.8px;
     color: lightslategrey; }
-  .music-box .icon {
+  .music-box .circle {
     border: 5px solid pink;
     height: 0.5rem;
     width: 0.5rem;
@@ -54,13 +61,14 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 8px 2px grey;
-    display: none; }
+    box-shadow: 0 2 2px 1px grey;
+    opacity: 0;
+    transition: 1s; }
     .music-box .list .item {
       padding: 10px 0;
       display: flex;
       justify-content: space-between; }
   .music-box .list.show {
-    display: block; }
+    opacity: 1; }
 
 /*# sourceMappingURL=index.css.map */
