@@ -6,11 +6,15 @@ body {
   font-size: 16px; }
 
 .icon {
-  width: 2.5em;
-  height: 2.5em;
+  width: 2em;
+  height: 2em;
   vertical-align: -0.15em;
-  fill: grey;
+  fill: rgba(252, 88, 50, 0.5);
   overflow: hidden; }
+
+.icon.play_or_stop {
+  width: 3.5em;
+  height: 3.5em; }
 
 .music-box {
   height: 100vh;
@@ -22,7 +26,8 @@ body {
   margin: 0 auto; }
   .music-box .before-next-btn, .music-box .before-next-song, .music-box .control, .music-box .bottom {
     display: flex;
-    justify-content: space-around; }
+    justify-content: space-around;
+    align-items: center; }
   .music-box .current-song {
     font-size: 32px;
     color: pink; }
@@ -37,7 +42,7 @@ body {
     max-height: 250px;
     margin: 0 auto;
     border-radius: 50%;
-    box-shadow: 0 0 18px 5px red;
+    box-shadow: 0 0 18px 5px rgba(252, 88, 50, 0.5);
     background-image: url(../img/swan.jpg);
     background-size: contain; }
   .music-box .progress {
@@ -51,21 +56,21 @@ body {
       background: grey; }
       .music-box .progress .total .now {
         height: 3px;
-        background-color: red;
+        background-color: rgba(252, 88, 50, 0.5);
         width: 10%; }
   .music-box .list {
     position: absolute;
-    border: 2px solid #9e9e9e;
+    border: 2px solid pink;
     padding: 10px;
-    background: rgba(158, 158, 158, 0.9);
+    background: rgba(252, 88, 50, 0.5);
     width: 80%;
     max-width: 400px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 2 2px 1px grey;
+    box-shadow: 0 2 2px 1px rgba(252, 88, 50, 0.5);
     opacity: 0;
-    transition: 1s; }
+    transition: .5s; }
     .music-box .list .item {
       padding: 10px 0;
       display: flex;

@@ -1,5 +1,7 @@
 $default-font-size : 16px;
 $max-width : 500px;
+$btn-color : rgba(252,88,50,.5); //按钮颜色
+$bg-color: rgba(252,88,50,1);
 
 * {
     margin: 0;
@@ -12,12 +14,19 @@ body {
 
 // 字体图标
 .icon { 
-    width: 2.5em; 
-    height: 2.5em;
+    width: 2em; 
+    height: 2em;
     vertical-align: -0.15em;
-    fill: grey;
+    fill: $btn-color;
     overflow: hidden;
  }
+
+.icon.play_or_stop {
+    width: 3.5em; 
+    height: 3.5em;
+
+}
+
 
 .music-box { 
     // 整个音乐盒子
@@ -32,6 +41,7 @@ body {
     .before-next-btn , .before-next-song , .control , .bottom{
         display: flex;
         justify-content: space-around;
+        align-items: center;
     }
 
     .current-song {
@@ -55,7 +65,7 @@ body {
         max-height: ($max-width/2);
         margin: 0 auto;
         border-radius: 50%;
-        box-shadow: 0 0 18px 5px red;
+        box-shadow: 0 0 18px 5px $btn-color;
         background-image: url(../img/swan.jpg);
         background-size: contain;
     }
@@ -76,7 +86,7 @@ body {
 
             .now {
                 height: 3px;
-                background-color: red;
+                background-color: $btn-color;
                 width: 10%;
             }
         }
@@ -85,15 +95,15 @@ body {
     .list { 
         // 歌曲列表
         position: absolute;
-        border: 2px solid rgba(158, 158, 158,1);;
+        border: 2px solid pink;;
         padding: 10px;
-        background: rgba(158, 158, 158, 0.9);
+        background: $btn-color;
         width: 80%;
         max-width: ($max-width * 0.8);
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        box-shadow: 0 2 2px 1px grey;
+        box-shadow: 0 2 2px 1px $btn-color;
         opacity: 0;
         
 
@@ -103,7 +113,7 @@ body {
             justify-content: space-between;
         }
 
-        transition: 1s;
+        transition: .5s;
         
     }
 

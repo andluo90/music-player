@@ -17,6 +17,20 @@ xhr.addEventListener('load',()=>{
         console.log(xhr.responseText)
         music_list = JSON.parse(xhr.responseText)
         load_music(music_list[music_index])
+
+
+        let temp =''
+        music_list.forEach((item)=>{
+            temp += 
+            `<div class="item">
+                <span>${item.title}</span>
+                <span>播放</span>
+            </div>
+            `;
+            
+        })
+
+        song_list.insertAdjacentHTML('beforeend',temp)
         
     }else{
         console.log(`音乐加载失败 ${xhr.status} ${xhr.responseText}`)
@@ -55,7 +69,7 @@ function load_music(obj){
             music.should_update = false;
             setTimeout(()=>{
                 music.should_update = true;
-                console.log("更新进度条。。。")
+                // console.log("更新进度条。。。")
                 let p = Math.round(music.currentTime/music.duration * 100)
                 let minute = parseInt(music.currentTime/60)
                 let second = parseInt(music.currentTime%60)+''
@@ -114,6 +128,23 @@ total.addEventListener('click',(e)=>{
     console.log("click total...")
     music.currentTime = Math.floor((e.offsetX/e.target.clientWidth)*music.duration)
     console.log(`当前播放时间为${music.currentTime}`)
+    let p = Math.round(music.currentTime/music.duration * 100)
+    let minute = parseInt(music.currentTime/60)
+    let second = parseInt(music.currentTime%60)+''
+    second = second.length === 2 ? second : '0'+second
+    percent.style.width = p+'%' //当前播放进度
+    cur_time.innerText = minute+':'+second
+})
+
+//播放完成事件
+music.addEventListener('ended',()=>{
+    if(music_index === music_list.length-1){
+        music_index = 0
+        load_music(music_list[music_index])
+    }else{
+        music_index++
+        load_music(music_list[music_index])
+    }
 })
 
 //
@@ -128,3 +159,5 @@ total.addEventListener('click',(e)=>{
 list_btn.addEventListener('click',()=>{
     song_list.classList.toggle('show')
 })
+
+
