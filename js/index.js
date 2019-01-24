@@ -4,6 +4,7 @@ function $(selector){
 
 let music_list
 let music =  new Audio()
+music.autoplay = true
 let music_index = 0
         
   
@@ -30,30 +31,44 @@ xhr.send()
 //加载音乐，并且默认播放
 function load_music(obj){
     music.src = obj.src
-    music.interval = 1000  //默认1s更新一次进度条
-    music.addEventListener('canplaythrough',()=>{
+    music.addEventListener('canplay',()=>{
         music.interval = Math.floor(music.duration/100)*1000 //计算进度条更新间格
-        console.log(`进度条更新间格${music.interval}`)
-        music.autoplay = true
-        full_time.innerText = (music.duration/60).toFixed(2) //获取音乐时长    
+        full_time.innerText = (music.duration/60).toFixed(2) //获取音乐时长   
+        percent.style.width = '0%'; //重置进度条为0
     })
+
     cur_song_name.innerText = obj.title
     singer.innerText = obj.auther
-    play_or_stop.href.baseVal = "#icon-zanting"
+
+    play_or_stop.href.baseVal = "#icon-bofang";
+
+    music.addEventListener('playing',()=>{
+        play_or_stop.href.baseVal = "#icon-zanting"
+
+    })
+
 
     music.should_update = true //是否要更新进度条
     music.addEventListener('timeupdate',()=>{
+        // 更新进度条和时间
         if(music.should_update){
             music.should_update = false;
             setTimeout(()=>{
                 music.should_update = true;
-                console.log("需要更新进度条。。。")
+                console.log("更新进度条。。。")
                 let p = Math.round(music.currentTime/music.duration * 100)
-                percent.style.width = p+'%'
-            },music.interval)
+                let minute = parseInt(music.currentTime/60)
+                let second = parseInt(music.currentTime%60)+''
+                second = second.length === 2 ? second : '0'+second
+                percent.style.width = p+'%' //当前播放进度
+                cur_time.innerText = minute+':'+second
+            },1000)
         }
     })
     
+    music.addEventListener('ended',function(){
+        
+    })
 }
 
 //播放/暂停
@@ -94,6 +109,12 @@ play_pre.addEventListener('click',()=>{
 
 })
 
+//点击进度条事件
+total.addEventListener('click',(e)=>{
+    console.log("click total...")
+    music.currentTime = Math.floor((e.offsetX/e.target.clientWidth)*music.duration)
+    console.log(`当前播放时间为${music.currentTime}`)
+})
 
 //
 
