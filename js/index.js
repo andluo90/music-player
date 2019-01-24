@@ -4,7 +4,6 @@ function $(selector){
 
 let music_list
 let music =  new Audio()
-music.autoplay = true
 let music_index = 0
         
   
@@ -31,10 +30,30 @@ xhr.send()
 //加载音乐，并且默认播放
 function load_music(obj){
     music.src = obj.src
+    music.interval = 1000  //默认1s更新一次进度条
+    music.addEventListener('canplaythrough',()=>{
+        music.interval = Math.floor(music.duration/100)*1000 //计算进度条更新间格
+        console.log(`进度条更新间格${music.interval}`)
+        music.autoplay = true
+        full_time.innerText = (music.duration/60).toFixed(2) //获取音乐时长    
+    })
     cur_song_name.innerText = obj.title
     singer.innerText = obj.auther
     play_or_stop.href.baseVal = "#icon-zanting"
 
+    music.should_update = true //是否要更新进度条
+    music.addEventListener('timeupdate',()=>{
+        if(music.should_update){
+            music.should_update = false;
+            setTimeout(()=>{
+                music.should_update = true;
+                console.log("需要更新进度条。。。")
+                let p = Math.round(music.currentTime/music.duration * 100)
+                percent.style.width = p+'%'
+            },music.interval)
+        }
+    })
+    
 }
 
 //播放/暂停
@@ -74,6 +93,8 @@ play_pre.addEventListener('click',()=>{
     }
 
 })
+
+
 //
 
 
