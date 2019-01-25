@@ -121,12 +121,22 @@ play_or_stop.addEventListener('click',()=>{
 
 //播放下一首
 play_next.addEventListener('click',()=>{
-    if(music_index === music_list.length-1){
-        music_index = 0
+    if(mode.dataset.id === '0'){
+        let random_num = Math.floor(Math.random()*music_list.length)
+        console.log(`随机播放曲首${random_num}`)
+        load_music(music_list[random_num])
+    }else if(mode.dataset.id === '1'){
+        if(music_index === music_list.length-1){
+            music_index = 0
+        }else{
+            music_index++
+            console.log(`循环播放下一首${music_index}`)
+            load_music(music_list[music_index])
+        }
+    }else if(mode.dataset.id === '2'){
+        console.log(`单曲循环${music_index}`)
         load_music(music_list[music_index])
-    }else{
-        music_index++
-        load_music(music_list[music_index])
+
     }
 })
 
@@ -157,16 +167,57 @@ total.addEventListener('click',(e)=>{
 
 //播放完成事件
 music.addEventListener('ended',()=>{
-    if(music_index === music_list.length-1){
-        music_index = 0
+
+    if(mode.dataset.id === '0'){
+        let random_num = Math.floor(Math.random()*music_list.length)
+        console.log(`随机播放曲首${random_num}`)
+        load_music(music_list[random_num])
+    }else if(mode.dataset.id === '1'){
+        if(music_index === music_list.length-1){
+            music_index = 0
+        }else{
+            music_index++
+            console.log(`循环播放下一首${music_index}`)
+            load_music(music_list[music_index])
+        }
+    }else if(mode.dataset.id === '2'){
+        console.log(`单曲循环${music_index}`)
         load_music(music_list[music_index])
+
+    }
+
+    
+})
+
+//播放模式
+mode.addEventListener('click',(e)=>{
+    console.log(`click mode : ${e}`)
+    if(e.target.dataset.id === '0'){
+        e.target.dataset.id = '1'
+        e.target.href.baseVal = '#icon-xunhuan'
+    }else if(e.target.dataset.id === '1'){
+        e.target.dataset.id = '2'
+        e.target.href.baseVal = '#icon-danquxunhuan'
+    }else if(e.target.dataset.id === '2'){
+        e.target.dataset.id = '0'
+        e.target.href.baseVal = '#icon-suiji'
     }else{
-        music_index++
-        load_music(music_list[music_index])
+        console.log(`e.target.dataset.id 无效：${e.target.dataset.id}`)
     }
 })
 
-//
+
+//随机获取指定数量的音乐
+function random_choice(list,num){
+    let l = list.length;
+    new_list = []
+    for(let i=0;i<l;i++){
+        let j  = Math.floor(Math.random()*l)
+        new_list.push(list[j]);
+    }
+
+    return new_list
+}
 
 
 
