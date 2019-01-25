@@ -56,13 +56,13 @@ body {
   .music-box .bottom {
     margin-bottom: 30px; }
   .music-box .current-song {
-    font-size: 40px;
+    font-size: 32px;
     color: orange;
     margin-top: 30px;
     margin-left: 15px;
     margin-right: 15px; }
   .music-box .singer {
-    font-size: 20.8px;
+    font-size: 17.6px;
     color: lightslategrey; }
   .music-box .circle {
     border: 5px solid pink;
