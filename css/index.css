@@ -7,10 +7,13 @@ body {
 
 @keyframes spin {
   0% {
+    box-shadow: 0 0 18px 5px rgba(252, 88, 50, 0.5);
     transform: rotate(0deg); }
   50% {
+    box-shadow: 0 0 6px 2px rgba(252, 88, 50, 0.5);
     transform: rotate(180deg); }
   100% {
+    box-shadow: 0 0 18px 5px rgba(252, 88, 50, 0.5);
     transform: rotate(360deg); } }
 .icon {
   width: 2em;
@@ -30,11 +33,17 @@ body {
   justify-content: space-around;
   text-align: center;
   max-width: 500px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  background-image: url(../img/music_bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-height: 800px;
+  box-shadow: inset 0 0 18px 0px #FF5722; }
   .music-box .before-next-btn, .music-box .before-next-song, .music-box .control, .music-box .bottom {
     display: flex;
     justify-content: space-around;
-    align-items: center; }
+    align-items: center;
+    z-index: 1; }
   .music-box .current-song {
     font-size: 32px;
     color: pink; }
@@ -52,7 +61,7 @@ body {
     box-shadow: 0 0 18px 5px rgba(252, 88, 50, 0.5);
     background-image: url(../img/swan.jpg);
     background-size: contain;
-    animation: 36s spin infinite;
+    animation: 36s spin infinite linear;
     animation-play-state: paused; }
   .music-box .circle.active {
     animation-play-state: running; }
@@ -60,15 +69,22 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin: 0 auto; }
+    margin: 0 auto;
+    color: lightslategrey; }
     .music-box .progress .total {
       width: 80%;
-      height: 3px;
+      height: 4px;
       background: grey; }
       .music-box .progress .total .now {
-        height: 3px;
-        background-color: rgba(252, 88, 50, 0.5);
+        height: 4px;
+        background-color: #fc5832;
         width: 10%; }
+    .music-box .progress #cur_time {
+      padding-top: 10px;
+      padding-left: 10px; }
+    .music-box .progress #full_time {
+      padding-top: 10px;
+      padding-right: 10px; }
   .music-box .list {
     position: absolute;
     border: 2px solid pink;

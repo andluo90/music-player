@@ -47,7 +47,13 @@ function load_music(obj){
     music.src = obj.src
     music.addEventListener('canplay',()=>{
         music.interval = Math.floor(music.duration/100)*1000 //计算进度条更新间格
-        full_time.innerText = (music.duration/60).toFixed(2) //获取音乐时长   
+        // full_time.innerText = (music.duration/60).toFixed(2) //获取音乐时长
+        
+        let minute = parseInt(music.duration/60)
+        let second = parseInt(music.duration%60)+''
+        second = second.length === 2 ? second : '0'+second
+        full_time.innerText = minute+':'+second //音乐总时长
+
         percent.style.width = '0%'; //重置进度条为0
     })
 
