@@ -60,10 +60,11 @@ body {
 }
 
 
-@media (min-height:800px){
+@media (min-width:500px){
     .music-box{
-        max-height: 800px;
-        margin-top:150px;
+        max-width: 300px;
+        max-height: 550px;
+        margin-top:50px;
     }
 }
 
@@ -76,12 +77,12 @@ body {
     flex-direction: column;
     justify-content: space-around;
     text-align: center;
-    max-width: $max-width;
+    // max-width: $max-width;
     margin-left:auto;
     margin-right: auto;
 
 
-    background-image: url(../img/music_bg.png);
+    background-image: url('');
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -120,12 +121,12 @@ body {
         border: 5px solid pink;
         height: (1rem/2);
         width: (1rem/2);
-        max-width: ($max-width/2);
-        max-height: ($max-width/2);
+        max-width: ($max-width/3);
+        max-height: ($max-width/3);
         margin: 0 auto;
         border-radius: 50%;
         box-shadow: 0 0 18px 5px $btn-color;
-        background-image: url(../img/swan.jpg);
+        background-image: url('');
         background-size: contain;
         animation: 36s spin infinite linear;
         animation-play-state: paused;
@@ -193,7 +194,7 @@ body {
         padding: 10px;
         background: $btn-color;
         width: 80%;
-        max-width: ($max-width * 0.8);
+        max-width: 280px;
         box-shadow: 0 2 2px 1px $btn-color;
         display: none;
         font-size: 18px;
