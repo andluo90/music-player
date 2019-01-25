@@ -3,10 +3,6 @@ function $(selector){
 }
 
 
-if(window.innerHeight >= 800){
-    music_box.classList.toggle('pc')
-    
-}
 
 let all_music_list
 let music_list

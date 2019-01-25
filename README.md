@@ -4,5 +4,6 @@
 ## 技术栈
 1. flex 布局
 2. 动态rem
-3. sass
-4. animation
+3. 响应式 
+4. sass
+5. animation

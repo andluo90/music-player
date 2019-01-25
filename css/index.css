@@ -32,10 +32,10 @@ body {
   width: 3.5em;
   height: 3.5em; }
 
-.music-box.pc {
-  max-height: 800px;
-  margin-top: 150px; }
-
+@media (min-height: 800px) {
+  .music-box {
+    max-height: 800px;
+    margin-top: 150px; } }
 .music-box {
   height: 100vh;
   display: flex;
@@ -43,7 +43,8 @@ body {
   justify-content: space-around;
   text-align: center;
   max-width: 500px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   background-image: url(../img/music_bg.png);
   background-repeat: no-repeat;
   background-size: cover;
