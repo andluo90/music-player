@@ -82,7 +82,7 @@ body {
     margin-right: auto;
 
 
-    background-image: url('');
+    background-image: url('../img/music_bg.png');
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -148,18 +148,18 @@ body {
 
         .total {
             width: 80%;
-            height: 4px;
+            height: 3px;
             background: grey;
 
             .now {
-                height: 4px;
+                height: 3px;
                 background-color: $bg-color;
                 width: 0%;
                 position: relative;
 
                 .dot {
-                    width: 12px;
-                    height: 12px;
+                    width: 10px;
+                    height: 10px;
                     background-color: $bg-color;
                     box-shadow: 0 0 2px 2px orange;
                     position: absolute;
