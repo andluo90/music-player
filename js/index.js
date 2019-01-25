@@ -24,15 +24,15 @@ xhr.addEventListener('load',()=>{
 
 
         let temp ='' //加载播放列表Html
-        music_list.forEach((item)=>{
+        
+
+        for(let i=0;i<music_list.length;i++){
             temp += 
             `<div class="item">
-                <span>${item.trackName}</span>
-                
+                <span data-index='${i}'>${music_list[i].trackName}</span>
             </div>
             `;
-        })
-    
+        }
         song_list.insertAdjacentHTML('afterbegin',temp)
         
     }else{
@@ -222,14 +222,15 @@ another_songs.addEventListener('click',()=>{
     music_list = random_choice(all_music_list,8)
     let temp ='' //加载播放列表Html
     song_list.innerHTML=''
-    music_list.forEach((item)=>{
+
+    for(let i=0;i<music_list.length;i++){
         temp += 
         `<div class="item">
-            <span>${item.trackName}</span>
-            
+            <span data-index='${i}'>${music_list[i].trackName}</span>
         </div>
         `;
-    })
+    }
+
 
     song_list.insertAdjacentHTML('afterbegin',temp)
     console.log('换歌成功.')
@@ -237,7 +238,13 @@ another_songs.addEventListener('click',()=>{
 
 })
 
-
+//音乐列表点击事件
+song_list.addEventListener('click',(e)=>{
+    let index = parseInt(e.target.dataset.index)
+    song_list.classList.toggle('show')
+    load_music(music_list[index])
+    console.log(`点击第${index}首`)
+})
 
 
 // 音乐列表的展示
