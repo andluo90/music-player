@@ -183,11 +183,16 @@ body {
         max-width: ($max-width * 0.8);
         box-shadow: 0 2 2px 1px $btn-color;
         display: none;
+        font-size: 18px;
+        color:white;
     
         .item {
             padding: 10px 0;
             display: flex;
             justify-content: space-between;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
     
         

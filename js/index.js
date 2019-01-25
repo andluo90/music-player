@@ -2,6 +2,7 @@ function $(selector){
     return document.querySelector(selector);
 }
 
+let all_music_list
 let music_list
 let music =  new Audio()
 music.autoplay = true
@@ -17,7 +18,8 @@ xhr.addEventListener('load',()=>{
     if((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304){
         console.log("音乐加载成功.")
         console.log(xhr.responseText)
-        music_list = JSON.parse(xhr.responseText)
+        all_music_list = JSON.parse(xhr.responseText)
+        music_list = all_music_list.splice(0,7) //只拿前10首
         load_music(music_list[music_index])
 
 
@@ -25,8 +27,8 @@ xhr.addEventListener('load',()=>{
         music_list.forEach((item)=>{
             temp += 
             `<div class="item">
-                <span>${item.title}</span>
-                <span>播放</span>
+                <span>${item.trackName}</span>
+                
             </div>
             `;
             

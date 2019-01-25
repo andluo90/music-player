@@ -117,11 +117,16 @@ body {
     width: 80%;
     max-width: 400px;
     box-shadow: 0 2 2px 1px rgba(252, 88, 50, 0.5);
-    display: none; }
+    display: none;
+    font-size: 18px;
+    color: white; }
     .music-box .list .item {
       padding: 10px 0;
       display: flex;
-      justify-content: space-between; }
+      justify-content: space-between;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; }
   .music-box .list.show {
     position: absolute;
     left: 50%;
