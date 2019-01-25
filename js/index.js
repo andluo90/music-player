@@ -5,8 +5,8 @@ function $(selector){
 let all_music_list
 let music_list
 let music =  new Audio()
-music.autoplay = true
-let music_index = 0
+music.autoplay = true //默认播放
+let music_index = 0 //默认索引
         
   
 //加载音乐列表json
@@ -17,7 +17,7 @@ xhr.open('GET','https://easy-mock.com/mock/5c3c513f83a6d6013cad2571/test/musicLi
 xhr.addEventListener('load',()=>{
     if((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304){
         console.log("音乐加载成功.")
-        console.log(xhr.responseText)
+        // console.log(xhr.responseText)
         all_music_list = JSON.parse(xhr.responseText)
         music_list = all_music_list.splice(0,7) //只拿前10首
         load_music(music_list[music_index])
@@ -31,10 +31,9 @@ xhr.addEventListener('load',()=>{
                 
             </div>
             `;
-            
         })
-
-        song_list.insertAdjacentHTML('beforeend',temp)
+    
+        song_list.insertAdjacentHTML('afterbegin',temp)
         
     }else{
         console.log(`音乐加载失败 ${xhr.status} ${xhr.responseText}`)
@@ -94,9 +93,6 @@ function load_music(obj){
         }
     })
     
-    music.addEventListener('ended',function(){
-        
-    })
 }
 
 //播放/暂停
@@ -207,11 +203,12 @@ mode.addEventListener('click',(e)=>{
 })
 
 
+
 //随机获取指定数量的音乐
 function random_choice(list,num){
     let l = list.length;
     new_list = []
-    for(let i=0;i<l;i++){
+    for(let i=0;i<8;i++){
         let j  = Math.floor(Math.random()*l)
         new_list.push(list[j]);
     }
@@ -220,7 +217,25 @@ function random_choice(list,num){
 }
 
 
+//换一批
+another_songs.addEventListener('click',()=>{
+    music_list = random_choice(all_music_list,8)
+    let temp ='' //加载播放列表Html
+    song_list.innerHTML=''
+    music_list.forEach((item)=>{
+        temp += 
+        `<div class="item">
+            <span>${item.trackName}</span>
+            
+        </div>
+        `;
+    })
 
+    song_list.insertAdjacentHTML('afterbegin',temp)
+    console.log('换歌成功.')
+      
+
+})
 
 
 
