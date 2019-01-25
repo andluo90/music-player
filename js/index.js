@@ -65,6 +65,8 @@ function load_music(obj){
     music.addEventListener('playing',()=>{
         play_or_stop.href.baseVal = "#icon-zanting"
         circle.classList.add('active')
+        dot.classList.add('active')
+
 
     })
 
@@ -98,11 +100,14 @@ play_or_stop.addEventListener('click',()=>{
         play_or_stop.href.baseVal = "#icon-zanting"
         music.play()
         circle.classList.add('active') 
+        dot.classList.add('active')
         console.log(`点击播放成功`)
     }else{
         play_or_stop.href.baseVal = "#icon-bofang"
         music.pause()
-        circle.classList.remove('active')        
+        circle.classList.remove('active')  
+        dot.classList.remove('active')
+
         console.log(`点击暂停成功`)
 
 

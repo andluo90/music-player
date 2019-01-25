@@ -15,6 +15,11 @@ body {
   100% {
     box-shadow: 0 0 18px 5px rgba(252, 88, 50, 0.5);
     transform: rotate(360deg); } }
+@keyframes dot_scale {
+  0% {
+    transform: scale(1); }
+  100% {
+    transform: scale(1.4); } }
 .icon {
   width: 2em;
   height: 2em;
@@ -44,9 +49,14 @@ body {
     justify-content: space-around;
     align-items: center;
     z-index: 1; }
+  .music-box .bottom {
+    margin-bottom: 30px; }
   .music-box .current-song {
-    font-size: 32px;
-    color: pink; }
+    font-size: 40px;
+    color: orange;
+    margin-top: 30px;
+    margin-left: 15px;
+    margin-right: 15px; }
   .music-box .singer {
     font-size: 20.8px;
     color: lightslategrey; }
@@ -78,7 +88,21 @@ body {
       .music-box .progress .total .now {
         height: 4px;
         background-color: #fc5832;
-        width: 10%; }
+        width: 0%;
+        position: relative; }
+        .music-box .progress .total .now .dot {
+          width: 12px;
+          height: 12px;
+          background-color: #fc5832;
+          box-shadow: 0 0 2px 2px orange;
+          position: absolute;
+          right: -3px;
+          top: -4px;
+          border-radius: 50%;
+          animation: 1s dot_scale infinite linear alternate;
+          animation-play-state: paused; }
+        .music-box .progress .total .now .dot.active {
+          animation-play-state: running; }
     .music-box .progress #cur_time {
       padding-top: 10px;
       padding-left: 10px; }
