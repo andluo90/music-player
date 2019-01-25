@@ -108,7 +108,7 @@ play_or_stop.addEventListener('click',()=>{
     }else{
         play_or_stop.href.baseVal = "#icon-bofang"
         music.pause()
-        circle.classList.remove('active')  
+        circle.classList.('active')  
         dot.classList.remove('active')
 
         console.log(`点击暂停成功`)
