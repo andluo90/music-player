@@ -5,6 +5,13 @@
 body {
   font-size: 16px; }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  50% {
+    transform: rotate(180deg); }
+  100% {
+    transform: rotate(360deg); } }
 .icon {
   width: 2em;
   height: 2em;
@@ -44,7 +51,11 @@ body {
     border-radius: 50%;
     box-shadow: 0 0 18px 5px rgba(252, 88, 50, 0.5);
     background-image: url(../img/swan.jpg);
-    background-size: contain; }
+    background-size: contain;
+    animation: 36s spin infinite;
+    animation-play-state: paused; }
+  .music-box .circle.active {
+    animation-play-state: running; }
   .music-box .progress {
     display: flex;
     justify-content: center;

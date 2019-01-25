@@ -19,7 +19,7 @@ xhr.addEventListener('load',()=>{
         load_music(music_list[music_index])
 
 
-        let temp =''
+        let temp ='' //加载播放列表Html
         music_list.forEach((item)=>{
             temp += 
             `<div class="item">
@@ -58,6 +58,7 @@ function load_music(obj){
 
     music.addEventListener('playing',()=>{
         play_or_stop.href.baseVal = "#icon-zanting"
+        circle.classList.add('active')
 
     })
 
@@ -89,11 +90,13 @@ function load_music(obj){
 play_or_stop.addEventListener('click',()=>{
     if(music.paused){
         play_or_stop.href.baseVal = "#icon-zanting"
-        music.play()    
+        music.play()
+        circle.classList.add('active') 
         console.log(`点击播放成功`)
     }else{
         play_or_stop.href.baseVal = "#icon-bofang"
         music.pause()
+        circle.classList.remove('active')        
         console.log(`点击暂停成功`)
 
 
