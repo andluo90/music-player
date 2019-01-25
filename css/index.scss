@@ -10,6 +10,7 @@ $bg-color: rgba(252,88,50,1);
 
 body {
     font-size: 16px;
+    position: relative;
 }
 
 //动画：旋转
@@ -49,8 +50,8 @@ body {
  }
 
 .icon.play_or_stop {
-    width: 3.5em; 
-    height: 3.5em;
+    width: 4em; 
+    height: 4em;
 
 }
 
@@ -79,7 +80,7 @@ body {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        z-index: 1;
+        // z-index: 1;
     }
 
     .bottom {
@@ -174,33 +175,32 @@ body {
 
     .list { 
         // 歌曲列表
-        position: absolute;
+        margin:0 auto;
         border: 2px solid pink;;
         padding: 10px;
         background: $btn-color;
         width: 80%;
         max-width: ($max-width * 0.8);
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
         box-shadow: 0 2 2px 1px $btn-color;
-        opacity: 0;
-        
-
+        display: none;
+    
         .item {
             padding: 10px 0;
             display: flex;
             justify-content: space-between;
         }
-
-        transition: .5s;
+    
         
     }
-
+    
     .list.show { 
-        //显示歌曲列表
-        opacity: 1;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%); 
+        display: block;
     }
 
     
 }
+

@@ -3,7 +3,8 @@
   padding: 0; }
 
 body {
-  font-size: 16px; }
+  font-size: 16px;
+  position: relative; }
 
 @keyframes spin {
   0% {
@@ -28,8 +29,8 @@ body {
   overflow: hidden; }
 
 .icon.play_or_stop {
-  width: 3.5em;
-  height: 3.5em; }
+  width: 4em;
+  height: 4em; }
 
 .music-box {
   height: 100vh;
@@ -47,8 +48,7 @@ body {
   .music-box .before-next-btn, .music-box .before-next-song, .music-box .control, .music-box .bottom {
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    z-index: 1; }
+    align-items: center; }
   .music-box .bottom {
     margin-bottom: 30px; }
   .music-box .current-song {
@@ -110,23 +110,23 @@ body {
       padding-top: 10px;
       padding-right: 10px; }
   .music-box .list {
-    position: absolute;
+    margin: 0 auto;
     border: 2px solid pink;
     padding: 10px;
     background: rgba(252, 88, 50, 0.5);
     width: 80%;
     max-width: 400px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     box-shadow: 0 2 2px 1px rgba(252, 88, 50, 0.5);
-    opacity: 0;
-    transition: .5s; }
+    display: none; }
     .music-box .list .item {
       padding: 10px 0;
       display: flex;
       justify-content: space-between; }
   .music-box .list.show {
-    opacity: 1; }
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block; }
 
 /*# sourceMappingURL=index.css.map */
