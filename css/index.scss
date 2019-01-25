@@ -46,20 +46,24 @@ body {
 
 // 字体图标
 .icon { 
-    width: 2em; 
-    height: 2em;
+    width: 1.5em; 
+    height: 1.5em;
     vertical-align: -0.15em;
     fill: $btn-color;
     overflow: hidden;
  }
 
 .icon.play_or_stop {
-    width: 4em; 
-    height: 4em;
+    width: 3.5em; 
+    height: 3.5em;
 
 }
 
-
+.music-box.pc {
+    max-height: 800px;
+    margin-top:150px;
+    
+}
 
 .music-box { 
     // 整个音乐盒子
@@ -76,8 +80,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 
-    // border: 3px solid pink;
-    max-height: 800px;
+    // max-height: 800px;
     box-shadow: inset 0 0 18px 0px #FF5722;
 
     .before-next-btn , .before-next-song , .control , .bottom{

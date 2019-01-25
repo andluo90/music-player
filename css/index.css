@@ -22,15 +22,19 @@ body {
   100% {
     transform: scale(1.4); } }
 .icon {
-  width: 2em;
-  height: 2em;
+  width: 1.5em;
+  height: 1.5em;
   vertical-align: -0.15em;
   fill: rgba(252, 88, 50, 0.5);
   overflow: hidden; }
 
 .icon.play_or_stop {
-  width: 4em;
-  height: 4em; }
+  width: 3.5em;
+  height: 3.5em; }
+
+.music-box.pc {
+  max-height: 800px;
+  margin-top: 150px; }
 
 .music-box {
   height: 100vh;
@@ -43,7 +47,6 @@ body {
   background-image: url(../img/music_bg.png);
   background-repeat: no-repeat;
   background-size: cover;
-  max-height: 800px;
   box-shadow: inset 0 0 18px 0px #FF5722; }
   .music-box .before-next-btn, .music-box .before-next-song, .music-box .control, .music-box .bottom {
     display: flex;
