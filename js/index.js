@@ -10,7 +10,9 @@ let music_index = 0
   
 //加载音乐列表json
 let xhr = new XMLHttpRequest()
-xhr.open('GET','https://easy-mock.com/mock/5c3c513f83a6d6013cad2571/test/musicList')
+// xhr.open('GET','https://easy-mock.com/mock/5c3c513f83a6d6013cad2571/test/musicList')
+xhr.open('GET','https://easy-mock.com/mock/5c3c513f83a6d6013cad2571/test/musicList2')
+
 xhr.addEventListener('load',()=>{
     if((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304){
         console.log("音乐加载成功.")
@@ -57,8 +59,9 @@ function load_music(obj){
         percent.style.width = '0%'; //重置进度条为0
     })
 
-    cur_song_name.innerText = obj.title
-    singer.innerText = obj.auther
+    cur_song_name.innerText = obj.trackName
+    singer.innerText = obj.albumName
+    circle.style.backgroundImage = `url('${obj.trackCoverPath}')`
 
     play_or_stop.href.baseVal = "#icon-bofang";
 
